@@ -8,6 +8,9 @@ public class SidewaysEnemy : Enemy
 
     public Transform shootPoint; // the position where the bullet will spawn
 
+    public float xLeftBoundry; // enity cannot move left past this x coord
+    public float xRightBoundry; // enity cannot move right past this x coord
+
     private bool isCooldown = false;// whether or not the shooting ability is on cooldown
 
     // Start is called before the first frame update
@@ -19,7 +22,8 @@ public class SidewaysEnemy : Enemy
     // Update is called once per frame
     void Update()
     {
-        shoot(); 
+        shoot();
+        move();
     }
 
 
@@ -54,6 +58,24 @@ public class SidewaysEnemy : Enemy
     override
     public  void move()
     {
+     
+        // this.transform.position = new Vector3(Mathf.PingPong
+        //  (Time.time * 2, xRightBoundry - xLeftBoundry) + xLeftBoundry,
+        //  this.transform.position.y, this. transform.position.z);
+
+        if (this.transform.position.x > xRightBoundry && speed > 0) //if enemy is moving right and past the 
+                                                                    // right boundry
+        {
+            speed *= -1;// change its moving direction to left
+        }
+
+        if (this.transform.position.x < xLeftBoundry && speed < 0)//if enemy is moving left and past the 
+                                                                  // left boundry
+        {
+            speed *= -1; // change its moving direction to right
+        }
+
+        this.transform.position += new Vector3(speed * Time.deltaTime, 0, 0); // move enemy based on speed
 
     }
 
