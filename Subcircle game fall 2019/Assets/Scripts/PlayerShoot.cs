@@ -7,7 +7,7 @@ public class PlayerShoot : MonoBehaviour
     public GameObject bullet;
     public Vector3 launchPoint;
     public Transform trans;
-   
+    private GameObject firedbullet;
  
 
     // Start is called before the first frame update
@@ -22,8 +22,8 @@ public class PlayerShoot : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
  
-            Instantiate(bullet,(trans.position+launchPoint),transform.rotation);
-
+           firedbullet=Instantiate(bullet,(trans.position+launchPoint),transform.rotation);
+           firedbullet.GetComponent<Rigidbody2D>().velocity = new Vector2(10f,0f);
 
 
         }
