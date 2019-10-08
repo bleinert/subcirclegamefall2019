@@ -17,7 +17,8 @@ public class SidewaysEnemy : Enemy
     // Update is called once per frame
     void Update()
     {
-        
+        shoot();
+        move();
     }
 
 
@@ -33,14 +34,14 @@ public class SidewaysEnemy : Enemy
        // Debug.Log(!isCooldown);
         if (!isCooldown) // only shoot when there is no cooldown
         {
-            Debug.Log("Shoot2");
+         
             isCooldown = true;
             GameObject projectile = GameObject.Instantiate(bulletPrefab); // spawn the bullet
             
 
             projectile.transform.position = shootPoint.position; // set location of made bullet 
                                                                  //to shootpoint location
-            Debug.Log(shootPoint.position);
+       
             projectile.GetComponent<Rigidbody2D>().velocity = new Vector3(0, -bulletSpeed); // give the bullet speed
 
             Invoke("ResetShootCooldown", 2f); // reset the shoot cooldown after some time
@@ -80,10 +81,13 @@ public class SidewaysEnemy : Enemy
             // this.gameObject.SetActive(false); // disable gameobject instead of destroy for efficiency
         }
     }
-
+    
     private void OnTriggerStay2D(Collider2D collision)
     {
-        
+        if (collision.gameObject.tag == "Player")
+        {
+            Debug.Log("Crashed into player");
+        }
     }
 
 
