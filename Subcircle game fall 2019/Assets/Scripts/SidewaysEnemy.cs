@@ -13,17 +13,11 @@ public class SidewaysEnemy : Enemy
 
     private bool isCooldown = false;// whether or not the shooting ability is on cooldown
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
-        shoot();
-        move();
+        
     }
 
 
@@ -59,9 +53,6 @@ public class SidewaysEnemy : Enemy
     public  void move()
     {
      
-        // this.transform.position = new Vector3(Mathf.PingPong
-        //  (Time.time * 2, xRightBoundry - xLeftBoundry) + xLeftBoundry,
-        //  this.transform.position.y, this. transform.position.z);
 
         if (this.transform.position.x > xRightBoundry && speed > 0) //if enemy is moving right and past the 
                                                                     // right boundry
@@ -78,5 +69,22 @@ public class SidewaysEnemy : Enemy
         this.transform.position += new Vector3(speed * Time.deltaTime, 0, 0); // move enemy based on speed
 
     }
+
+    override
+    public void loseHealth(float value)
+    {
+        health = health - value;
+        if (health < 0) {
+            //health = 0;
+            Destroy(this.gameObject); // destroy this gameobject enemy if health is 0 or below
+            // this.gameObject.SetActive(false); // disable gameobject instead of destroy for efficiency
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        
+    }
+
 
 }
