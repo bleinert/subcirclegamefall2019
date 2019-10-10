@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 1930029231753996454}
   - component: {fileID: 660289346034967676}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: SidewaysEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -162,6 +162,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 3841146657456543854, guid: ef8a8afde14a6ae46b888ed654ca7de1,
     type: 3}
   shootPoint: {fileID: 1930029231615205645}
+  xLeftBoundry: 0
+  xRightBoundry: 0
 --- !u!65 &660289346034967676
 BoxCollider:
   m_ObjectHideFlags: 0

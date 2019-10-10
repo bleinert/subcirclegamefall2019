@@ -240,7 +240,7 @@ PrefabInstance:
     - target: {fileID: 1930029231753996457, guid: 265b0776a49dc514da8e2f0b8437ea21,
         type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: SidewaysEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 1930029231753996455, guid: 265b0776a49dc514da8e2f0b8437ea21,
         type: 3}
