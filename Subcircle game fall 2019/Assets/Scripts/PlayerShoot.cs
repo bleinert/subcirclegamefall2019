@@ -23,7 +23,7 @@ public class PlayerShoot : MonoBehaviour
         {
  
            firedbullet=Instantiate(bullet,(trans.position+launchPoint),transform.rotation);
-           firedbullet.GetComponent<Rigidbody2D>().velocity = new Vector2(10f,0f);
+           firedbullet.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,10f);
 
 
         }

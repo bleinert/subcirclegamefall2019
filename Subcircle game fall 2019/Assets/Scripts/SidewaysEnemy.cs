@@ -16,7 +16,7 @@ public class SidewaysEnemy : Enemy
     // Start is called before the first frame update
     void Start()
     {
-        
+        health =100; 
     }
 
     // Update is called once per frame
@@ -24,6 +24,7 @@ public class SidewaysEnemy : Enemy
     {
         shoot();
         move();
+        death();
     }
 
 
@@ -79,4 +80,22 @@ public class SidewaysEnemy : Enemy
 
     }
 
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag.Equals("PlayerBullet"))
+        {
+            health-= 5;
+            Debug.Log("Sideways Enemy Health: "+ health);
+
+        }
+    }
+
+    public void death()
+    {
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+            Debug.Log("Sideways Enemy Died");
+        }
+    }
 }
