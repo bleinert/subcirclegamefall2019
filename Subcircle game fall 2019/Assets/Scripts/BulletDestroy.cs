@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class BulletDestroy : MonoBehaviour
 {
-   
-   
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
