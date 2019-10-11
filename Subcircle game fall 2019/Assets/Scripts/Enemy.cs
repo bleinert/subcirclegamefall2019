@@ -10,4 +10,7 @@ public abstract class Enemy : MonoBehaviour
 
     public abstract void shoot();
     public abstract void move();
+
+    public abstract void loseHealth(float value);
+   
 }
