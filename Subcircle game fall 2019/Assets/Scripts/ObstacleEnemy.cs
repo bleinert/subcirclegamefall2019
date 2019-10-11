@@ -37,4 +37,12 @@ public class ObstacleEnemy : Enemy
         }
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            Debug.Log("Crashed into player");
+        }
+    }
+
 }

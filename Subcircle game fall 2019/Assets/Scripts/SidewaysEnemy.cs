@@ -13,12 +13,18 @@ public class SidewaysEnemy : Enemy
 
     private bool isCooldown = false;// whether or not the shooting ability is on cooldown
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        health =100; 
+    }
 
     // Update is called once per frame
     void Update()
     {
         shoot();
         move();
+        death();
     }
 
 
@@ -34,14 +40,14 @@ public class SidewaysEnemy : Enemy
        // Debug.Log(!isCooldown);
         if (!isCooldown) // only shoot when there is no cooldown
         {
-         
+            Debug.Log("Shoot2");
             isCooldown = true;
             GameObject projectile = GameObject.Instantiate(bulletPrefab); // spawn the bullet
             
 
             projectile.transform.position = shootPoint.position; // set location of made bullet 
                                                                  //to shootpoint location
-       
+            Debug.Log(shootPoint.position);
             projectile.GetComponent<Rigidbody2D>().velocity = new Vector3(0, -bulletSpeed); // give the bullet speed
 
             Invoke("ResetShootCooldown", 2f); // reset the shoot cooldown after some time
@@ -54,6 +60,9 @@ public class SidewaysEnemy : Enemy
     public  void move()
     {
      
+        // this.transform.position = new Vector3(Mathf.PingPong
+        //  (Time.time * 2, xRightBoundry - xLeftBoundry) + xLeftBoundry,
+        //  this.transform.position.y, this. transform.position.z);
 
         if (this.transform.position.x > xRightBoundry && speed > 0) //if enemy is moving right and past the 
                                                                     // right boundry
@@ -71,24 +80,22 @@ public class SidewaysEnemy : Enemy
 
     }
 
-    override
-    public void loseHealth(float value)
+    void OnCollisionEnter2D(Collision2D col)
     {
-        health = health - value;
-        if (health < 0) {
-            //health = 0;
-            Destroy(this.gameObject); // destroy this gameobject enemy if health is 0 or below
-            // this.gameObject.SetActive(false); // disable gameobject instead of destroy for efficiency
-        }
-    }
-    
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
+        if (col.gameObject.tag.Equals("PlayerBullet"))
         {
-            Debug.Log("Crashed into player");
+            health-= 5;
+            Debug.Log("Sideways Enemy Health: "+ health);
+
         }
     }
 
-
+    public void death()
+    {
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+            Debug.Log("Sideways Enemy Died");
+        }
+    }
 }
