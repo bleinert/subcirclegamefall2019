@@ -24,7 +24,7 @@ public class SidewaysEnemy : Enemy
     {
         shoot();
         move();
-        death();
+      
     }
 
 
@@ -79,23 +79,32 @@ public class SidewaysEnemy : Enemy
         this.transform.position += new Vector3(speed * Time.deltaTime, 0, 0); // move enemy based on speed
 
     }
-
-    void OnCollisionEnter2D(Collision2D col)
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            Debug.Log("Crashed into player");
+        }
+    }
+    void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag.Equals("PlayerBullet"))
         {
-            health-= 5;
+            loseHealth(5);
             Debug.Log("Sideways Enemy Health: "+ health);
 
         }
     }
-
-    public void death()
+    override
+    public void loseHealth(float value)
     {
+        health = health - value;
         if (health <= 0)
         {
-            Destroy(gameObject);
             Debug.Log("Sideways Enemy Died");
+            //health = 0;
+            Destroy(this.gameObject); // destroy this gameobject enemy if health is 0 or below
         }
     }
+    
 }
