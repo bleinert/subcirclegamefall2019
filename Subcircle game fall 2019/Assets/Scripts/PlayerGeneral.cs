@@ -29,7 +29,10 @@ public class PlayerGeneral : MonoBehaviour
 
     }
 
-  
+   /* private void FixedUpdate()
+    {
+        
+    }*/
 
      private void Move()
      {
