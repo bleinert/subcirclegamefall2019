@@ -8,7 +8,7 @@ public class PlayerDamage : MonoBehaviour
         // Start is called before the first frame update
     void Start()
     {
-        stats.playerhealth = 100f;
+       stats.playerhealth = 100f;
     }
 
     // Update is called once per frame
