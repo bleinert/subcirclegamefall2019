@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class PlayerDamage : MonoBehaviour
 {
-    public PlayerStats stats; 
+    public PlayerStats stats;
+    public GameObject text;
+    
         // Start is called before the first frame update
     void Start()
     {
        stats.playerhealth = 100f;
+    
+
     }
 
     // Update is called once per frame
@@ -17,6 +21,7 @@ public class PlayerDamage : MonoBehaviour
         if (collision.gameObject.tag.Equals("EnemyBullet"))
         {
             stats.playerhealth -= 5;
+        
             Debug.Log("Player Health: " + stats.playerhealth);
 
         }
