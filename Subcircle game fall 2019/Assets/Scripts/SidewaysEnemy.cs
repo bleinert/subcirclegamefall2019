@@ -26,7 +26,7 @@ public class SidewaysEnemy : Enemy
     // Update is called once per frame
     void Update()
     {
-        //shoot();
+        shoot();
         move();
       
     }
@@ -41,7 +41,7 @@ public class SidewaysEnemy : Enemy
     override
     public void shoot() // shoots a bullet with some force
     {
-       // Debug.Log(!isCooldown);
+       
         if (!isCooldown) // only shoot when there is no cooldown
         {
             //Debug.Log("Shoot2");
@@ -67,8 +67,8 @@ public class SidewaysEnemy : Enemy
         // this.transform.position = new Vector3(Mathf.PingPong
         //  (Time.time * 2, xRightBoundry - xLeftBoundry) + xLeftBoundry,
         //  this.transform.position.y, this. transform.position.z);
-
-        if (pathNodes != null) // if there is a path to follow, do the following: 
+        
+        if (pathNodes.Count > 0) // if there is a path to follow, do the following: 
         {
             
             if (Vector2.Distance(this.transform.position, pathNodes[nodeIndex].position) < 1f) // if the enemy's position reaches the first node
@@ -104,7 +104,7 @@ public class SidewaysEnemy : Enemy
                     }
                 }
 
-                Debug.Log(nodeIndex);
+               // Debug.Log(nodeIndex);
 
             }
             else // if enemy has not reach its next node in the path, make it move a step closer to that node
