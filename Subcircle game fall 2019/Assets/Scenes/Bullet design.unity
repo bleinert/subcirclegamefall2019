@@ -187,75 +187,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4355939731968166613, guid: a09bf209bf5ec464489cda137e9ef128,
-        type: 3}
-      propertyPath: m_GravityScale
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4355939731968166613, guid: a09bf209bf5ec464489cda137e9ef128,
-        type: 3}
-      propertyPath: m_BodyType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6623308839424618865, guid: a09bf209bf5ec464489cda137e9ef128,
-        type: 3}
-      propertyPath: launchPoint.x
-      value: 0.597
-      objectReference: {fileID: 0}
-    - target: {fileID: 6623308839424618865, guid: a09bf209bf5ec464489cda137e9ef128,
-        type: 3}
-      propertyPath: launchPoint.y
-      value: 0.019
-      objectReference: {fileID: 0}
-    - target: {fileID: 2863045190180038255, guid: a09bf209bf5ec464489cda137e9ef128,
-        type: 3}
-      propertyPath: launchPoint.x
-      value: 0.507
-      objectReference: {fileID: 0}
-    - target: {fileID: 2863045190180038255, guid: a09bf209bf5ec464489cda137e9ef128,
-        type: 3}
-      propertyPath: launchPoint.y
-      value: 0.556
-      objectReference: {fileID: 0}
-    - target: {fileID: 2863045190180038255, guid: a09bf209bf5ec464489cda137e9ef128,
-        type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 4808236162541570123, guid: a3888023726562f42b3c8d70f0672867,
-        type: 3}
-    - target: {fileID: 2863045190180038255, guid: a09bf209bf5ec464489cda137e9ef128,
-        type: 3}
-      propertyPath: trans
-      value: 
-      objectReference: {fileID: 820237862}
-    - target: {fileID: 2752826117843573339, guid: a09bf209bf5ec464489cda137e9ef128,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6785607592884793109, guid: a09bf209bf5ec464489cda137e9ef128,
-        type: 3}
-      propertyPath: launchPoint.x
-      value: 0.507
-      objectReference: {fileID: 0}
-    - target: {fileID: 6785607592884793109, guid: a09bf209bf5ec464489cda137e9ef128,
-        type: 3}
-      propertyPath: launchPoint.y
-      value: 0.556
-      objectReference: {fileID: 0}
-    - target: {fileID: 6785607592884793109, guid: a09bf209bf5ec464489cda137e9ef128,
-        type: 3}
-      propertyPath: speed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6785607592884793109, guid: a09bf209bf5ec464489cda137e9ef128,
-        type: 3}
-      propertyPath: trans
-      value: 
-      objectReference: {fileID: 820237862}
-    m_RemovedComponents:
-    - {fileID: 813880726875064186, guid: a09bf209bf5ec464489cda137e9ef128, type: 3}
-    - {fileID: 2863045190180038255, guid: a09bf209bf5ec464489cda137e9ef128, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a09bf209bf5ec464489cda137e9ef128, type: 3}
 --- !u!1001 &423692599
 PrefabInstance:
@@ -514,12 +446,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 601742185}
   m_CullTransparentMesh: 0
---- !u!4 &820237862 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4034087659629238545, guid: a09bf209bf5ec464489cda137e9ef128,
-    type: 3}
-  m_PrefabInstance: {fileID: 10097625}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &866749986
 GameObject:
   m_ObjectHideFlags: 0
