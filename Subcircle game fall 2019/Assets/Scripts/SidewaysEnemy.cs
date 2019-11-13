@@ -8,7 +8,8 @@ public class SidewaysEnemy : Enemy
 
     public Transform shootPoint; // the position where the bullet will spawn
 
-
+    public float killTimeInSeconds;
+    private float timeCounter = 0;
 
     private bool isCooldown = false;// whether or not the shooting ability is on cooldown
 
@@ -27,7 +28,9 @@ public class SidewaysEnemy : Enemy
     {
         shoot();
         move();
-      
+        timeCounter += Time.deltaTime; //increment the timer each frame
+
+
     }
 
 
@@ -70,10 +73,17 @@ public class SidewaysEnemy : Enemy
         if (pathNodes.Count > 0) // if there is a path to follow, do the following: 
         {
             
+            
             if (Vector2.Distance(this.transform.position, pathNodes[nodeIndex].position) < 1f) // if the enemy's position reaches the first node
                                                                              // in the pathway, start following the next node
                                                                              //Only compare x and y coords and not z coords
             {
+
+                if (nodeIndex == 0 && (timeCounter > killTimeInSeconds )) // if the timer reaches the enemy's death time,
+                                                              // it will kill itself after reaching back to its first node path
+                {
+                    Destroy(this.gameObject);
+                }
                 
               
                     if (nodeIndex < pathNodes.Count-1)
@@ -88,13 +98,10 @@ public class SidewaysEnemy : Enemy
                     }
                 
 
-               // Debug.Log(nodeIndex);
 
             }
             else // if enemy has not reach its next node in the path, make it move a step closer to that node
             {
-
-
                 
                 Vector3 vDirection = new Vector3(pathNodes[nodeIndex].position.x - this.transform.position.x,
                    pathNodes[nodeIndex].position.y - this.transform.position.y, 0); // calculate direction vector
@@ -110,6 +117,9 @@ public class SidewaysEnemy : Enemy
 
 
     }
+
+   
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
