@@ -375,6 +375,11 @@ PrefabInstance:
       propertyPath: speed
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6785607592884793109, guid: a09bf209bf5ec464489cda137e9ef128,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 9132687148083072726, guid: a09bf209bf5ec464489cda137e9ef128,
         type: 3}
       propertyPath: m_Enabled
@@ -384,6 +389,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsTrigger
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4355939731968166613, guid: a09bf209bf5ec464489cda137e9ef128,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a09bf209bf5ec464489cda137e9ef128, type: 3}
