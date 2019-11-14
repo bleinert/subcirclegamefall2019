@@ -12,8 +12,6 @@ GameObject:
   - component: {fileID: 126013826482706157}
   - component: {fileID: 4355939731968166613}
   - component: {fileID: 9132687148083072726}
-  - component: {fileID: 2863045190180038255}
-  - component: {fileID: 813880726875064186}
   - component: {fileID: 6785607592884793109}
   m_Layer: 0
   m_Name: TestPlayer
@@ -101,7 +99,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -132,34 +130,6 @@ EdgeCollider2D:
   - {x: 0.43304962, y: -0.24780542}
   - {x: 0.21666047, y: -0.3743465}
   - {x: 0.00027133338, y: -0.5008876}
---- !u!114 &2863045190180038255
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 709888818229393060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82496d896c9d111478e56328557f70b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
-  launchPoint: {x: 0, y: 0, z: 0}
-  trans: {fileID: 0}
---- !u!114 &813880726875064186
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 709888818229393060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2edaaf49f547b04c855bc8ce34be057, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: 4e13c4bdf1d226c4a8bd83425d4e61ed, type: 2}
 --- !u!114 &6785607592884793109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,9 +144,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerstats: {fileID: 11400000, guid: 4e13c4bdf1d226c4a8bd83425d4e61ed, type: 2}
   bullet: {fileID: 4808236162541570123, guid: a3888023726562f42b3c8d70f0672867, type: 3}
-  launchPoint: {x: 0, y: 0, z: 0}
-  trans: {fileID: 0}
-  speed: 0
+  launchPoint: {x: 0.507, y: 0.556, z: 0}
+  trans: {fileID: 4034087659629238545}
+  speed: 2
 --- !u!1 &7024689020929570558
 GameObject:
   m_ObjectHideFlags: 0

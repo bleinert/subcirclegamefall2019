@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Enemy : MonoBehaviour
 {
     public float health;
-    public float speed;
+    [SerializeField] protected float speed;
     public float bulletSpeed;
 
     public abstract void shoot();
