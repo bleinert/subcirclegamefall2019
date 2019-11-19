@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerGeneral : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class PlayerGeneral : MonoBehaviour
     private float moveHorizontal;
     private float moveVertical;
     private Vector2 movement;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +28,10 @@ public class PlayerGeneral : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+        if (playerstats.playerhealth <= 0)
+        {
+            SceneManager.LoadScene("UIMenu");
+        }
     }
     void FixedUpdate()
     {
