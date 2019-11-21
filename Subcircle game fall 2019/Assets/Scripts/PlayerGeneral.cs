@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerGeneral : MonoBehaviour
 {
@@ -9,10 +10,12 @@ public class PlayerGeneral : MonoBehaviour
     public Vector3 launchPoint;
     public Transform trans;
     private GameObject firedbullet;
+    public float moveSpeed;
     Rigidbody2D rb;
-    public float speed;
     private float moveHorizontal;
     private float moveVertical;
+    private Vector2 movement;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,26 +24,33 @@ public class PlayerGeneral : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
+    {
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
+        if (playerstats.playerhealth <= 0)
+        {
+            SceneManager.LoadScene("UIMenu");
+        }
+    }
+    void FixedUpdate()
     {
        
-      shoot();  
-      Move();
+      shoot();
+        Move();
 
     }
 
-   /* private void FixedUpdate()
-    {
-        
-    }*/
-
-     private void Move()
+    /* private void FixedUpdate()
      {
-        moveHorizontal = Input.GetAxis("Horizontal");
-        moveVertical = Input.GetAxis("Vertical");
-        rb.AddForce(new Vector2(moveHorizontal, moveVertical) * speed);
+
+     }*/
+
+    void Move()
+    {
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
-     
+
     void shoot()
     {
         if (Input.GetButtonDown("Fire1"))

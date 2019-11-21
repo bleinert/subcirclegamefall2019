@@ -79,9 +79,10 @@ MonoBehaviour:
   health: 300
   speed: 3
   bulletSpeed: 5
-  bulletPrefab: {fileID: 3841146657456543854, guid: ef8a8afde14a6ae46b888ed654ca7de1,
+  bulletPrefab: {fileID: 5844467402785401105, guid: a994202ec599f8743a1e387ef3d8b24c,
     type: 3}
   shootPoint: {fileID: 495276011712262855}
+  killTimeInSeconds: 120
   pathNodes:
   - {fileID: 495276012508821779}
   - {fileID: 495276012167576068}
