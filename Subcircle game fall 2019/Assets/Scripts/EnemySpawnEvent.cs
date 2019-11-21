@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 //Referance to a YouTube video https://www.youtube.com/watch?v=Vrld13ypX_I
 //part 2 referance https://www.youtube.com/watch?v=q0SBfDFn2Bs&t=1139s
@@ -14,14 +15,13 @@ public class EnemySpawnEvent : MonoBehaviour
     {
         public string name;
         public Transform enemy;
-        public int count;
-        public float rate;
+        public int count; //This is for how many enemies
+        public float rate; //time between spawn enemy
     }
 
     public Wave[] waves;
     public float timeBetweenWaves = 5f;
 
-    private LoadSceneTrigger loadScene;
     private float waveCountdown;
     private SpawnState state = SpawnState.COUNTING;
     private int nextWave = 0;
@@ -30,7 +30,6 @@ public class EnemySpawnEvent : MonoBehaviour
     void Start()
     {
         waveCountdown = timeBetweenWaves;
-        loadScene = gameObject.GetComponent<LoadSceneTrigger>();
     }
 
     void Update()
@@ -69,7 +68,7 @@ public class EnemySpawnEvent : MonoBehaviour
         //Expected changed. This is when last wave is finish, change this to be a winning transition.
         if (nextWave + 1 > waves.Length - 1)
         {
-            loadScene.LoadScene();
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //There should be a next scene when building game //Update: Copy and paste script, use it if desire but otherwise, this is for when all wave is complete
         }
         else
         {
