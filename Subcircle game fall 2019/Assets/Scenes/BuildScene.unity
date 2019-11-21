@@ -521,6 +521,11 @@ PrefabInstance:
       propertyPath: playerSound
       value: 
       objectReference: {fileID: 8300000, guid: fc6bcd36e80155f4ca7ec89ee5711903, type: 3}
+    - target: {fileID: 6785607592884793109, guid: a09bf209bf5ec464489cda137e9ef128,
+        type: 3}
+      propertyPath: launchPoint.x
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 9132687148083072726, guid: a09bf209bf5ec464489cda137e9ef128,
         type: 3}
       propertyPath: m_Enabled
@@ -1129,7 +1134,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
