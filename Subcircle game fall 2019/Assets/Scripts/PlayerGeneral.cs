@@ -11,10 +11,13 @@ public class PlayerGeneral : MonoBehaviour
     public Transform trans;
     private GameObject firedbullet;
     public float moveSpeed;
+    
     Rigidbody2D rb;
     private float moveHorizontal;
     private float moveVertical;
     private Vector2 movement;
+
+    public AudioClip playerSound;
 
     // Start is called before the first frame update
     void Start()
@@ -58,6 +61,7 @@ public class PlayerGeneral : MonoBehaviour
 
             firedbullet = Instantiate(bullet, (trans.position + launchPoint), trans.rotation);
             firedbullet.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 10f);
+            AudioManager.Instance.PlayAudio(playerSound);
 
 
         }

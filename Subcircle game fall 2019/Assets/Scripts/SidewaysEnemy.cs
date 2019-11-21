@@ -15,13 +15,10 @@ public class SidewaysEnemy : Enemy
 
     public List<Transform> pathNodes = new List<Transform>();
     private int nodeIndex = 0;
-   
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        health =100; 
-    }
+    public AudioClip EnemySound;
+
+
 
     // Update is called once per frame
     void Update()
@@ -145,6 +142,7 @@ public class SidewaysEnemy : Enemy
             Debug.Log("Sideways Enemy Died");
             //health = 0;
             Destroy(this.gameObject); // destroy this gameobject enemy if health is 0 or below
+            AudioManager.Instance.PlayAudio(EnemySound); // make death noise
         }
     }
     
