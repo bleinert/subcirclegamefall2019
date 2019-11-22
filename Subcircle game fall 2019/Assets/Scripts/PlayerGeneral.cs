@@ -33,7 +33,7 @@ public class PlayerGeneral : MonoBehaviour
         movement.y = Input.GetAxisRaw("Vertical");
         if (playerstats.playerhealth <= 0)
         {
-            SceneManager.LoadScene("UIMenu");
+            SceneManager.LoadScene("GameOverMenu");
         }
     }
     void FixedUpdate()

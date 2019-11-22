@@ -17,7 +17,7 @@ public class ObstacleEnemy : Enemy
     override
     public void move()
     {
-        this.transform.position += new Vector3(0,  -speed * Time.deltaTime, 0);
+        this.GetComponentInParent<Transform>().position += new Vector3(0,  -speed * Time.deltaTime, 0);
     } 
 
     override
