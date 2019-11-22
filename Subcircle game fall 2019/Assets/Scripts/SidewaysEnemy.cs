@@ -52,6 +52,7 @@ public class SidewaysEnemy : Enemy
                                                                  //to shootpoint location
             //Debug.Log(shootPoint.position);
             projectile.GetComponent<Rigidbody2D>().velocity = new Vector3(0, -bulletSpeed); // give the bullet speed
+            AudioManager.Instance.PlayAudio(EnemySound); // make shoot noise
 
             Invoke("ResetShootCooldown", 2f); // reset the shoot cooldown after some time
         }
@@ -142,7 +143,7 @@ public class SidewaysEnemy : Enemy
             Debug.Log("Sideways Enemy Died");
             //health = 0;
             Destroy(this.gameObject); // destroy this gameobject enemy if health is 0 or below
-            AudioManager.Instance.PlayAudio(EnemySound); // make death noise
+          
         }
     }
     
