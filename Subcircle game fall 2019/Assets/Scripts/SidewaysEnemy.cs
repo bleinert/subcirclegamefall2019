@@ -129,7 +129,7 @@ public class SidewaysEnemy : Enemy
     {
         if (col.gameObject.tag.Equals("PlayerBullet"))
         {
-            loseHealth(5);
+            loseHealth(18);
             Debug.Log("Sideways Enemy Health: "+ health);
 
         }

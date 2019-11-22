@@ -71,7 +71,7 @@ public class PlayerGeneral : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("EnemyBullet"))
         {
-            playerstats.playerhealth -= 25;
+            playerstats.playerhealth -= 10;
             Debug.Log("Player Health: " + playerstats.playerhealth);
 
         }
