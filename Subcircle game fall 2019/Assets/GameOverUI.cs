@@ -15,4 +15,9 @@ public class GameOverUI : MonoBehaviour
     {
         SceneManager.LoadScene("BuildScene"); // Should Start the game again
     }
+
+    public void Menu()
+    {
+        SceneManager.LoadScene("UIMenu"); // Should Return to Menu
+    }
 }
