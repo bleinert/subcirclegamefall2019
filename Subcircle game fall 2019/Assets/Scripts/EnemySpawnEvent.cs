@@ -9,6 +9,7 @@ public class EnemySpawnEvent : MonoBehaviour
 {
 
     public enum SpawnState { SPAWNING, WAITING, COUNTING }
+    private bool allWAVEDONE = false;
 
     [System.Serializable]
     public class Wave
@@ -68,7 +69,8 @@ public class EnemySpawnEvent : MonoBehaviour
         //Expected changed. This is when last wave is finish, change this to be a winning transition.
         if (nextWave + 1 > waves.Length - 1)
         {
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //There should be a next scene when building game //Update: Copy and paste script, use it if desire but otherwise, this is for when all wave is complete
+            
+            SceneManager.LoadScene("Victory Menu"); //There should be a next scene when building game //Update: Copy and paste script, use it if desire but otherwise, this is for when all wave is complete
         }
         else
         {
@@ -93,18 +95,20 @@ public class EnemySpawnEvent : MonoBehaviour
 
     IEnumerator SpawnWave(Wave _wave)
     {
-        Debug.Log("Spawning Wave: " + _wave.name);
-        state = SpawnState.SPAWNING;
+        
+            Debug.Log("Spawning Wave: " + _wave.name);
+            state = SpawnState.SPAWNING;
 
-        for (int i = 0; i < _wave.count; i++)
-        {
-            SpawnEnemy(_wave.enemy);
-            yield return new WaitForSeconds(1f / _wave.rate);
-        }
+            for (int i = 0; i < _wave.count; i++)
+            {
+                SpawnEnemy(_wave.enemy);
+                yield return new WaitForSeconds(1f / _wave.rate);
+            }
 
-        state = SpawnState.WAITING;
+            state = SpawnState.WAITING;
 
-        yield break;
+            yield break;
+        
     }
 
     void SpawnEnemy(Transform _enemy)
