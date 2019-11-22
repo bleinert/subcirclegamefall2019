@@ -20,7 +20,7 @@ public class PlayerDamage : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("EnemyBullet"))
         {
-            stats.playerhealth -= 5;
+            stats.playerhealth -= 25;
         
             Debug.Log("Player Health: " + stats.playerhealth);
 
@@ -31,7 +31,7 @@ public class PlayerDamage : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("Enemy"))
         {
-            stats.playerhealth -= 5;
+            stats.playerhealth -= 15;
 
             Debug.Log("Player Health: " + stats.playerhealth);
 

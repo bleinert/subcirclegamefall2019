@@ -13,7 +13,7 @@ public class GameOverUI : MonoBehaviour
 
     public void Retry()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1); // Should Start the game again
+        SceneManager.LoadScene("BuildScene"); // Should Start the game again
     }
 
     public void ReturntoMenu()
