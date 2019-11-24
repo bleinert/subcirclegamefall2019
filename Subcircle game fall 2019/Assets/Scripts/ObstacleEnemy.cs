@@ -36,6 +36,10 @@ public class ObstacleEnemy : Enemy
 
         }
     }
+
+   
+
+
     override
     public void loseHealth(float value)
     {

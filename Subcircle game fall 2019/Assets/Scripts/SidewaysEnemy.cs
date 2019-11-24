@@ -118,13 +118,6 @@ public class SidewaysEnemy : Enemy
 
    
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            Debug.Log("Crashed into player");
-        }
-    }
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag.Equals("PlayerBullet"))
@@ -134,6 +127,8 @@ public class SidewaysEnemy : Enemy
 
         }
     }
+
+ 
     override
     public void loseHealth(float value)
     {

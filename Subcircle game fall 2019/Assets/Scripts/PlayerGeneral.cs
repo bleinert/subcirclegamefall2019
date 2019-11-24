@@ -75,5 +75,9 @@ public class PlayerGeneral : MonoBehaviour
             Debug.Log("Player Health: " + playerstats.playerhealth);
 
         }
+        else {
+            playerstats.playerhealth -= 5;
+        }
+        
     }
 }
